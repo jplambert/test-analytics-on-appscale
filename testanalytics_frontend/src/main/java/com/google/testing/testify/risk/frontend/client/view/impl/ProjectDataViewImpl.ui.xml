@@ -9,7 +9,7 @@
 
       <gwt:FlowPanel ui:styleName="tty-PageIntroText">
         <gwt:InlineLabel ui:field="introText" />
-        <gwt:Anchor ui:styleName="tty-InlineAnchor" target="_blank" href="/help/ta-help.html#data">Learn more</gwt:Anchor>
+        <gwt:Anchor ui:styleName="tty-InlineAnchor" target="_blank" href="http://code.google.com/p/test-analytics/wiki/InAppDocumentation#Project_Bugs,_Checkins,_and_Testcases">Learn more</gwt:Anchor>
       </gwt:FlowPanel>
 
       <gwt:Label ui:field="dataSummary" />

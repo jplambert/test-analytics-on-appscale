@@ -18,6 +18,7 @@ package com.google.testing.testify.risk.frontend.client.view.impl;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ChangeEvent;
 import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.safehtml.shared.SafeHtmlUtils;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
@@ -143,32 +144,32 @@ public class ProjectSettingsViewImpl extends Composite implements ProjectSetting
         List<String> difference = StringUtil.subtractList(newOwners, currentOwners);
         if (difference.size() > 0) {
           warning.append("<br><br><b>Added owners:</b> ");
-          warning.append(StringUtil.listToCsv(difference));
+          warning.append(SafeHtmlUtils.htmlEscape(StringUtil.listToCsv(difference)));
         }
         difference = StringUtil.subtractList(currentOwners, newOwners);
         if (difference.size() > 0) {
           warning.append("<br><br><b>Removed owners:</b> ");
-          warning.append(StringUtil.listToCsv(difference));
+          warning.append(SafeHtmlUtils.htmlEscape(StringUtil.listToCsv(difference)));
         }
         difference = StringUtil.subtractList(newEditors, currentEditors);
         if (difference.size() > 0) {
           warning.append("<br><br><b>Added editors:</b> ");
-          warning.append(StringUtil.listToCsv(difference));
+          warning.append(SafeHtmlUtils.htmlEscape(StringUtil.listToCsv(difference)));
         }
         difference = StringUtil.subtractList(currentEditors, newEditors);
         if (difference.size() > 0) {
           warning.append("<br><br><b>Removed editors:</b> ");
-          warning.append(StringUtil.listToCsv(difference));
+          warning.append(SafeHtmlUtils.htmlEscape(StringUtil.listToCsv(difference)));
         }
         difference = StringUtil.subtractList(newViewers, currentViewers);
         if (difference.size() > 0) {
           warning.append("<br><br><b>Added viewers:</b> ");
-          warning.append(StringUtil.listToCsv(difference));
+          warning.append(SafeHtmlUtils.htmlEscape(StringUtil.listToCsv(difference)));
         }
         difference = StringUtil.subtractList(currentViewers, newViewers);
         if (difference.size() > 0) {
           warning.append("<br><br><b>Removed viewers:</b> ");
-          warning.append(StringUtil.listToCsv(difference));
+          warning.append(SafeHtmlUtils.htmlEscape(StringUtil.listToCsv(difference)));
         }
 
         // If there's a warning to save, then display it and require confirmation before saving.

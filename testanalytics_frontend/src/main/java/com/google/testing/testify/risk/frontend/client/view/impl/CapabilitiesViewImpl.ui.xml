@@ -11,7 +11,7 @@
     <ttywidgets:PageSectionVerticalPanel headerText="Capabilities">
       <gwt:FlowPanel ui:styleName="tty-PageIntroText">
         <gwt:InlineLabel>Capabilities are what your application actually does; they are just like features, except they are tied to a specific Attribute and Component pair.</gwt:InlineLabel>
-        <gwt:Anchor ui:styleName="tty-InlineAnchor" target="_blank" href="/help/ta-help.html#capabilities">Learn more</gwt:Anchor>
+        <gwt:Anchor ui:styleName="tty-InlineAnchor" target="_blank" href="http://code.google.com/p/test-analytics/wiki/InAppDocumentation#Capabilities">Learn more</gwt:Anchor>
       </gwt:FlowPanel>
 
       <gwt:SimplePanel ui:styleName="tty-CapabilitiesPageItem">

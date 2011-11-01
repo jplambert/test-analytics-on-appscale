@@ -8,7 +8,7 @@
 
       <gwt:FlowPanel ui:styleName="tty-PageIntroText">
         <gwt:InlineLabel>Enabling data providers will enable new ways to view risk associated with your application. However, in order for those Risk views to work you must also begin uploading data to Test Analytics.</gwt:InlineLabel>
-        <gwt:Anchor ui:styleName="tty-InlineAnchor" target="_blank" href="/help/ta-help.html#configure-data">Learn more</gwt:Anchor>
+        <gwt:Anchor ui:styleName="tty-InlineAnchor" target="_blank" href="http://code.google.com/p/test-analytics/wiki/InAppDocumentation#Configuring_Data_Requests">Learn more</gwt:Anchor>
       </gwt:FlowPanel>
 
       <!-- Add a new data source -->
@@ -29,7 +29,7 @@
     <ttywidgets:PageSectionVerticalPanel headerText="Existing Requests">
       <gwt:FlowPanel ui:styleName="tty-PageIntroText">
         <gwt:InlineLabel>Existing data requests will be continually imported by external tools.</gwt:InlineLabel>
-        <gwt:Anchor ui:styleName="tty-InlineAnchor" target="_blank" href="/help/ta-help.html#configure-data">Learn more</gwt:Anchor>
+        <gwt:Anchor ui:styleName="tty-InlineAnchor" target="_blank" href="http://code.google.com/p/test-analytics/wiki/InAppDocumentation#Configuring_Data_Requests">Learn more</gwt:Anchor>
       </gwt:FlowPanel>
 
       <gwt:VerticalPanel ui:field="dataRequestsPanel" />

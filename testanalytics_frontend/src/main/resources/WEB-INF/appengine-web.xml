@@ -9,6 +9,6 @@
     <property name="java.util.logging.config.file" value="WEB-INF/logging.properties"/>
     <property name="com.google.testing.testify.risk.frontend.url" value="https://test-analytics.appspot.com" />
     <property name="com.google.testing.testify.risk.frontend.localdomain" value="@google.com" />
-    <property name="com.google.testing.testify.risk.frontend.whitelisting" value="true" />
+    <property name="com.google.testing.testify.risk.frontend.whitelisting" value="false" />
   </system-properties>
 </appengine-web-app>

@@ -10,7 +10,7 @@
     <ttywidgets:PageSectionVerticalPanel headerText="Basics">
       <gwt:FlowPanel ui:styleName="tty-PageIntroText">
         <gwt:InlineLabel>These details help identify your project.</gwt:InlineLabel>
-        <gwt:Anchor ui:styleName="tty-InlineAnchor" target="_blank" href="/help/ta-help.html#settings">Learn more</gwt:Anchor>
+        <gwt:Anchor ui:styleName="tty-InlineAnchor" target="_blank" href="http://code.google.com/p/test-analytics/wiki/InAppDocumentation#Project_Details">Learn more</gwt:Anchor>
       </gwt:FlowPanel>
 
       <gwt:Label>Name</gwt:Label>
@@ -28,7 +28,7 @@
     <ttywidgets:PageSectionVerticalPanel headerText="Sharing">
       <gwt:FlowPanel ui:styleName="tty-PageIntroText">
         <gwt:InlineLabel>Setting a project's accessibility will determine who has access to view and update your Project. Owners have access to delete a project or mark it public; editors can update anything else.</gwt:InlineLabel>
-        <gwt:Anchor ui:styleName="tty-InlineAnchor" target="_blank" href="/help/ta-help.html#project-settings">Learn more</gwt:Anchor>
+        <gwt:Anchor ui:styleName="tty-InlineAnchor" target="_blank" href="http://code.google.com/p/test-analytics/wiki/InAppDocumentation#Project_Details">Learn more</gwt:Anchor>
       </gwt:FlowPanel>
       <gwt:Label>Project owners (comma-separated list of email addresses)</gwt:Label>
       <gwt:SimplePanel addStyleNames="tty-DetailsInputItem">

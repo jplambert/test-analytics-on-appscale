@@ -10,7 +10,7 @@
       <gwt:FlowPanel ui:styleName="tty-PageIntroText">
         <gwt:InlineLabel>Attributes are ways a marketer would describe your application, such as "Fast" or "Secure". Attributes in the ACC model 
   allow you to map Capabilities to business requirements.</gwt:InlineLabel>
-        <gwt:Anchor ui:styleName="tty-InlineAnchor" target="_blank" href="/help/ta-help.html#attributes">Learn more</gwt:Anchor>
+        <gwt:Anchor ui:styleName="tty-InlineAnchor" target="_blank" href="http://code.google.com/p/test-analytics/wiki/InAppDocumentation#Attributes">Learn more</gwt:Anchor>
       </gwt:FlowPanel>
 
       <gwt:HorizontalPanel ui:styleName="tty-ItemContainer" ui:field="addNewAttributePanel" visible="false">
