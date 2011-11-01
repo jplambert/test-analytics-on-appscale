@@ -157,7 +157,10 @@ public class EditCapabilityWidget extends Composite implements HasValue<Capabili
 
   @UiHandler("deleteImage")
   protected void handleDelete(ClickEvent event) {
-    setValue(null, true);
+    String promptText = "Are you sure you want to remove " + capability.getName() + "?";
+    if (Window.confirm(promptText)) {
+      setValue(null, true);
+    }
   }
 
   @UiHandler("cancelButton")
