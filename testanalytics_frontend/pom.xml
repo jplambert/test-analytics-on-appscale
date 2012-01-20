@@ -10,12 +10,12 @@
 
   <name>test-analytics</name>
 
-  <repositories>
-    <repository>
+  <pluginRepositories>
+    <pluginRepository>
       <id>has gwt-dnd 3.1.1</id>
       <url>http://gwtquery-plugins.googlecode.com/svn/mavenrepo</url>
-    </repository>
-  </repositories>
+    </pluginRepository>
+  </pluginRepositories>
 
   <dependencies>
     <dependency>
