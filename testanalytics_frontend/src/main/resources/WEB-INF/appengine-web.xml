@@ -11,4 +11,5 @@
     <property name="com.google.testing.testify.risk.frontend.localdomain" value="@google.com" />
     <property name="com.google.testing.testify.risk.frontend.whitelisting" value="false" />
   </system-properties>
+  <threadsafe>true</threadsafe>
 </appengine-web-app>
