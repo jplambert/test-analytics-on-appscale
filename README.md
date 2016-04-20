@@ -1,12 +1,22 @@
 # How to get Test Analytics to run on AppScale
 
+This tutorial is to be run in Linux.
+
+The AppScale tools are not available under Windows but you may give it a try if you are under MacOS.
+
+If you are under Windows, I recommend using VMWare to virtualize a Linux instance as it allows nested virtualization:
+a VM inside a VM. That way, your Linux virtual machine will be able to run the Vagrant VM properly.
+Obviously in that case you should allow quite a lot of memory to your VM, as the AppScale Vagrant VM alone requires 4GB of RAM.
+
+Another option is to use Docker instead of Vagrant, which should be a more lightweight solution.
+AppScale documentation: http://www.appscale.com/get-started/
+
 ## Build Test Analytics
 
 ### Install Maven and JDK, if necessary
 
 ```
-sudo apt-get install default-jdk
-sudo apt-get install maven
+sudo apt-get install default-jdk maven -y
 ```
 
 ### Add local gwt-dnd-3.1.1 JAR in Maven
@@ -25,6 +35,25 @@ mvn clean install
 
 ## Setup Appscale VM with Vagrant
 
+### Install Vagrant, if necessary
+
+https://www.vagrantup.com/downloads.html
+
+```
+curl -o vagrant.deb https://releases.hashicorp.com/vagrant/1.8.1/vagrant_1.8.1_x86_64.deb
+```
+
+You'll need to update the previous command as newer versions of Vagrant become available.
+Please check https://www.vagrantup.com/downloads.html to get the latest version of Vagrant.
+
+Then install the `.deb` file you just downloaded:
+
+```
+sudo dpkg -i vagrant.deb
+```
+
+### Create the AppScale Vagrant VM
+
 http://www.appscale.com/get-started/
 
 ```
@@ -37,7 +66,7 @@ Will get a `VagrantFile` in the current folder. All `vagrant` commands must be r
 vagrant up
 ```
 
-### Extra : in case of problem, how to reset the VM
+### Extra: in case of problem, how to reset the VM
 
 This is an easy and straightforward way to solve any key/secret/id issues with AppScale: just start over with a clean VM from scratch.
 
