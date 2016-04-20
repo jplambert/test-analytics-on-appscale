@@ -77,9 +77,63 @@ vagrant destroy
 vagrant up
 ```
 
+## Alternative to Vagrant: setup Appscale Docker container
+
+### Install Docker Engine, if necessary
+
+For Ubuntu Linux: https://docs.docker.com/engine/installation/linux/ubuntulinux/
+
+The following set of comands are for Ubuntu Trusty 14.04 (LTS).
+
+```
+sudo apt-get update
+sudo apt-get install apt-transport-https ca-certificates -y
+sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+sudo rm /etc/apt/sources.list.d/docker.list
+sudo sh -c 'echo "deb https://apt.dockerproject.org/repo ubuntu-trusty main" > /etc/apt/sources.list.d/docker.list'
+sudo apt-get update
+sudo apt-get purge lxc-docker
+apt-cache policy docker-engine
+sudo apt-get update
+sudo apt-get install linux-image-extra-$(uname -r) -y
+sudo apt-get install apparmor -y
+sudo apt-get update
+sudo apt-get install docker-engine -y
+sudo service docker start
+sudo docker run hello-world
+```
+
+### Create the AppScale Docker container
+
+http://www.appscale.com/get-started/
+
+```
+sudo docker pull appscale/appscale:latest
+```
+
+### Start the AppScale Docker container and configure SSH daemon
+
+```
+sudo docker run -i -t appscale/appscale:latest /bin/bash
+```
+
+This starts the Docker container and also logs you into it. The following commands are to be run in this Docker container session.
+
+https://docs.docker.com/engine/examples/running_ssh_service/
+
+```
+apt-get update && apt-get install -y openssh-server
+mkdir /var/run/sshd
+echo 'root:docker' | chpasswd
+sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
+echo "export VISIBLE=now" >> /etc/profile
+/usr/sbin/sshd -D
+```
+
 ## How to get Test Analytics into the VM
 
-NOT to be run in the VM -- you never need to log into the VM in this tutorial.
+NOT to be run in the VM or container. Run it in the host machine, near to the application code.
 
 ### Install AppScale Tools
 
@@ -105,13 +159,17 @@ You can configure how you want your application deployed in the `AppScaleFile`.
 In particular you'll find the IP address of the AppScale VM that'll run your application.
 However, the default configuration of the AppScale Vagrant VM matches the defaults in the `AppScaleFile`, so you don't need to change anything in this file.
 
+On the other hand, if you are relying on the AppScale Docker container, you'll have to update the IP to match the Docker container, namely 172.17.0.2 by default.
+
 ### Get AppScale up and running
 
 ```
 appscale up
 ```
 
-This will ask you a few questions to create the initial account with administrator rights.
+You will be prompt for the root password in the AppScale VM/container. Default password for a Vagrant VM is `vagrant`. The code in this tutorial set the password the the Docker container as `docker`.
+
+Afterwards this will ask you a few questions to create the initial account with administrator rights.
 
 ### Get Test Analytics running into AppScale
 
